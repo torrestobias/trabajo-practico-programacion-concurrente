@@ -1,5 +1,7 @@
 package clases;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +9,21 @@ public class Main {
     private static Buffer buffer;
     private static Scanner scanner;
     private static ThreadPool threadPool;
+
+    static HashMap<Long,Long> mapearRangos(int cantWorkers){
+        HashMap<Long, Long> rangos = new HashMap<Long, Long>();
+        long min = 1;
+        long max=0;
+        long numGrande = (long) Math.pow(2,32);
+        long numDividido = numGrande/cantWorkers;
+        for(int i=0; i<cantWorkers; i++){
+            rangos.put(min, min+(numDividido-1));
+            min+=numDividido;
+            max=min+numDividido;
+        }
+        return rangos;
+    }
+
 
     public static void main(String[] args) {
 
@@ -29,5 +46,13 @@ public class Main {
         threadPool = new ThreadPool(cantWorkers, buffer);
 
 
+        HashMap<Long,Long> prueba = mapearRangos(cantWorkers);
+        
+
+
     }
+
+
+
+
 }
