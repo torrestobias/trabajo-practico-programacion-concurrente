@@ -1,36 +1,36 @@
 package clases;
 
 public class Buffer {
-    private Object[] data;
+    private WorkUnity[] data;
     private int begin = 0;
     private int end = 0;
     private int n;
 
     public Buffer(int capacity){
         this.n = capacity;
-        this.data = new Object[this.n+1];
+        this.data = new WorkUnity[this.n+1];
     }
 
-    public synchronized void write (int o){
+    public synchronized void escribir (WorkUnity workUnity){
         while(isFull())
             try {
                 wait();
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
-        data [ begin ] = 0;
+        data [ begin ] = workUnity;
             begin = next (begin);
             notifyAll();
     }
 
-    public synchronized Object read(){
+    public synchronized WorkUnity leer(){
         while(isEmpty())
             try {
                 wait();
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
-        Object result = data [end];
+        WorkUnity result = data [end];
             end = next(end);
             notifyAll();
             return result;

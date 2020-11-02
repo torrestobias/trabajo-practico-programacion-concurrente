@@ -4,6 +4,9 @@
     <list default="true" id="8b7cc8f6-fb75-498a-b249-b11534911e07" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clases/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clases/Buffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clases/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clases/PowWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clases/PowWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clases/ThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clases/ThreadPool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +64,8 @@
       <workItem from="1603830777221" duration="5114000" />
       <workItem from="1603841889216" duration="1198000" />
       <workItem from="1604090807226" duration="3959000" />
+      <workItem from="1604270210455" duration="35000" />
+      <workItem from="1604282906093" duration="6448000" />
     </task>
     <servers />
   </component>
@@ -68,9 +73,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="488" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1604287419603">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="65" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1604287419603" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603831178605">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603831178605" />
+    <state width="1323" height="176" key="GridCell.Tab.0.bottom" timestamp="1604197887256">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="176" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604197887256" />
+    <state width="1323" height="176" key="GridCell.Tab.0.center" timestamp="1604197887255">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="176" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604197887255" />
+    <state width="1323" height="176" key="GridCell.Tab.0.left" timestamp="1604197887255">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="176" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604197887255" />
+    <state width="1323" height="176" key="GridCell.Tab.0.right" timestamp="1604197887256">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="176" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604197887256" />
   </component>
 </project>
