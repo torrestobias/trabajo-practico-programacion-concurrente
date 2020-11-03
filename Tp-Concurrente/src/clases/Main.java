@@ -1,8 +1,6 @@
 package clases;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +8,7 @@ public class Main {
     private static Buffer buffer;
     private static Scanner scanner;
     private static ThreadPool threadPool;
+    static long time;
 
     public static void setHayNonce() {
         Main.hayNonce = true;
@@ -36,12 +35,19 @@ public class Main {
         return hayNonce;
     }
 
+    static void timeEnd(){
+        long tiempoFinal =((System.currentTimeMillis() ) / 1000)%60;
+        if(tiempoFinal>60){
+            System.out.println("Se tardó " + tiempoFinal + " segundos.");
+        }
+        else{System.out.println("Se tardó " + tiempoFinal + " milisegundos.");}
+    }
 
     public static void main(String[] args) {
 
         scanner = new Scanner(System.in);
         long time = System.currentTimeMillis();
-
+        time = System.currentTimeMillis();
 
 
         System.out.print("Indique la cantidad de Threads a utilizar: ");
@@ -57,8 +63,9 @@ public class Main {
         int cantWorkers = Integer.parseInt(threads);
         buffer = new Buffer(2);
         threadPool = new ThreadPool(cantWorkers, buffer);
-
+        threadPool.instanciarPowWorkers();
         ArrayList<Range> rango = mapearRangos(cantWorkers);
+
 
         for (int i = 0; i < cantWorkers; i++) {
 

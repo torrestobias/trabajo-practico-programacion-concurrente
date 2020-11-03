@@ -1,7 +1,7 @@
 package clases;
 
 public class Buffer {
-    private WorkUnity[] data;
+    public WorkUnity[] data;
     private int begin = 0;
     private int end = 0;
     private int n;

@@ -2,9 +2,9 @@ package clases;
 
 public class WorkUnity {
 
-    private String texto;
-    private Range rango;
-    private Integer dificultad;
+    public String texto;
+    public Range rango;
+    public Integer dificultad;
 
     public WorkUnity(String texto, Range rango, Integer dificultad){
         this.texto = texto;

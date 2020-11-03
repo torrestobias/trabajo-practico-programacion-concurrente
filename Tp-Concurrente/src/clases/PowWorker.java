@@ -5,34 +5,32 @@ import java.security.NoSuchAlgorithmException;
 
 public class PowWorker extends Thread {
 
-    private Buffer buffer;
 
-    public PowWorker(Buffer buffer){
-        this.buffer = buffer;
-    }
+    private Buffer buff;
+    private WorkUnity variablework;
+    Long min;
+    Long max;
 
-
-    WorkUnity variablework = buffer.leer();
-
-    String cadenaTexto = variablework.getTexto();
-    Range rango = variablework.getRango();
-    Integer dificultad = variablework.getDificultad();
-    Long min = rango.getInicio();
-    Long max = rango.getFin();
-    Long actual = min;
-
-    public Boolean rangoNotEnded(){
-        return min != max;
+    public PowWorker(Buffer buff){
+        this.buff = buff;
     }
 
     public void run() {
+        this.variablework = buff.leer();
+        String cadenaTexto = variablework.getTexto();
+        Range rango = variablework.getRango();
+        Integer dificultad = variablework.getDificultad();
+        min = rango.getInicio();
+        max = rango.getFin();
+        Long actual = min;
 
-        while (Main.nonceFound() && rangoNotEnded()) {
+        while ( rangoNotEnded() && !Main.nonceFound() ) {
             try {
                byte[] hashed =  MessageDigest.getInstance("SHA-256").digest((cadenaTexto + actual.toString()).getBytes());
                if(chequearNonce(dificultad,hashed)){
                    Main.setHayNonce();
-                   System.out.println(actual);
+                   Main.timeEnd();
+                   System.out.println("Nonce encontrado con el número: "+actual);
                }
                actual++;
             } catch (NoSuchAlgorithmException e) {
@@ -49,5 +47,7 @@ public class PowWorker extends Thread {
         return encontro;
     }
 
-
+    public Boolean rangoNotEnded(){
+        return min != max;
+    }
 }
