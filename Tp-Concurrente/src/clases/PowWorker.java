@@ -16,6 +16,7 @@ public class PowWorker extends Thread {
     }
 
     public void run() {
+        Main.timeStart();
         this.variablework = buff.leer();
         String cadenaTexto = variablework.getTexto();
         Range rango = variablework.getRango();
